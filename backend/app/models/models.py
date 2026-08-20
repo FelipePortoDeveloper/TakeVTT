@@ -23,6 +23,7 @@ class Character(Base):
     attributes = Column(JSON, nullable=True, default={})
 
     user = relationship("User", back_populates="characters")
+    powers = relationship("CustomPower", back_populates="character")
 
 class CampaignMap(Base):
     __tablename__ = "campaign_maps"
