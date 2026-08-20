@@ -14,6 +14,7 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
             action_type = data.get("action")
             if action_type:
                 await dispatch_action(action_type, data, manager)
+
     except WebSocketDisconnect:
         manager.disconnect(websocket)
         await manager.broadcast({

@@ -1,7 +1,9 @@
 from .handlers.movement import handle_move_token
+from .handlers.add_token import handle_add_token
 
 ACTION_DISPATCHER = {
-    "MOVE_TOKEN": handle_move_token
+    "MOVE_TOKEN": handle_move_token,
+    "ADD_TOKEN" : handle_add_token
 }
 
 async def dispatch_action(action_type: str, data: dict, manager):
